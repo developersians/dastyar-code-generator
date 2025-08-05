@@ -1,0 +1,62 @@
+using Dastyar.SharedKernel.Domain;
+
+namespace Dastyar.Domain;
+
+public sealed class {{ OriginalName }} : Entity, IAggregateRoot
+{
+    #region Ctors
+    private {{ OriginalName }}() { }
+
+    private {{ OriginalName }}(
+        {{~ for prop in Properties ~}}
+        {{ prop?.DataType }} {{ prop?.CamelCase }}{{ if !for.last }}, {{ end }}
+        {{~ end ~}}
+        )
+    {
+        {{~ for prop in Properties ~}}
+        {{ prop?.OriginalName }} = {{ prop?.CamelCase }};
+        {{~ end ~}}
+    }
+    #endregion /Ctors
+
+    #region Properties
+    //This generator intentionally igonres generating properties
+    //because we previously worked on properties/navigations/descriptions
+    //Keep them!
+    #endregion /Properties
+
+    #region Domain methods
+    public static {{ OriginalName }} Create(
+        {{~ for prop in Properties ~}}
+        {{ prop?.DataType }} {{ prop?.CamelCase }}{{ if !for.last }}, {{ end }}
+        {{~ end ~}}
+        )
+    {
+        return new(
+            {{~ for prop in Properties ~}}
+            {{ prop?.CamelCase }}: {{ prop?.CamelCase }}{{ if !for.last }}, {{ end }}
+            {{~ end ~}}
+        );
+    }
+
+    public Result<short> Update(
+        {{~ for prop in Properties ~}}
+        {{~ if prop.OriginalName != "ID" ~}}
+        {{ prop?.DataType }} {{ prop?.CamelCase }}{{ if !for.last }}, {{ end }}
+        {{~ end ~}}{{~ end ~}}
+        )
+    {
+        {{~ for prop in Properties ~}}
+        {{~ if prop.OriginalName != "ID" ~}}
+        {{ prop?.OriginalName }} = {{ prop?.CamelCase }};
+        {{~ end ~}}{{~ end ~}}
+
+        //UpdateTimestamp();
+
+        //AddDomainEvent(new {{ PascalCase }}UpdatedDomainEvent(Id));
+
+        return Result<short>.Success(ID);
+    }
+    #endregion /Domain methods
+}
+

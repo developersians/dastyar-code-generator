@@ -1,0 +1,6 @@
+using Dastyar.SharedKernel.Domain;
+using MediatR;
+
+namespace Dastyar.Application;
+
+public sealed record Delete{{ PascalCase }}Command(short Id) : IRequest<Result<short>>;

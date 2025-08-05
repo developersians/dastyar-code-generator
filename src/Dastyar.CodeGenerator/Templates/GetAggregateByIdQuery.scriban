@@ -1,0 +1,6 @@
+using Dastyar.SharedKernel.Domain;
+using MediatR;
+
+namespace Dastyar.Application;
+
+public sealed record Get{{ PascalCase }}ByIdQuery(short Id) : IRequest<Result<{{ PascalCase }}Response>>;

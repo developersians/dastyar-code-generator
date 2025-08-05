@@ -1,0 +1,22 @@
+using Dastyar.Domain;
+using Dastyar.SharedKernel.Domain;
+using MediatR;
+
+namespace Dastyar.Application;
+
+internal sealed class Get{{ PascalCase }}ByIdQueryHandler(I{{ PascalCase }}Repository {{ CamelCase }}Repository)
+    : IRequestHandler<Get{{ PascalCase }}ByIdQuery, Result<{{ PascalCase }}Response>>
+{
+    public async Task<Result<{{ PascalCase }}Response>> Handle(Get{{ PascalCase }}ByIdQuery query, CancellationToken cancellationToken)
+    {
+         {{ OriginalName }}? result = await  {{ CamelCase }}Repository.GetAsync(
+            predicate: x => x.ID == query.Id,
+            includes: null,
+            cancellationToken: cancellationToken);
+
+        if (result == null)
+            return Result< {{ PascalCase }}Response>.Failure({{ PascalCase }}Errors.NotFound(query.Id));
+
+        return Result<{{ PascalCase }}Response>.Success(result.To{{ PascalCase }}Response());
+    }
+}

@@ -1,0 +1,7 @@
+using Dastyar.SharedKernel.Domain;
+
+namespace Dastyar.Domain;
+
+public interface I{{ PascalCase }}Repository : IRepository<{{ OriginalName }}>
+{
+}

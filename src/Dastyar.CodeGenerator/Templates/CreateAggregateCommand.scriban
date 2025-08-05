@@ -1,0 +1,10 @@
+using Dastyar.SharedKernel.Domain;
+using MediatR;
+
+namespace Dastyar.Application;
+
+public sealed record Create{{ PascalCase }}Command(
+    {{~ for prop in Properties ~}}
+    {{~ if prop.OriginalName != "ID" ~}}
+    {{ prop?.DataType }} {{ prop?.PascalCase }}{{ if !for.last }}, 
+{{ end }}{{ end }}{{~ end ~}}) : IRequest<Result<short>>;

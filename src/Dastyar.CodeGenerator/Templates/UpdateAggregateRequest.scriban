@@ -1,0 +1,13 @@
+namespace Dastyar.Api;
+
+public sealed record Update{{ PascalCase }}Request(
+    {{~ for prop in Properties ~}}
+    {{~ if prop.OriginalName != "ID" ~}}
+    /// <summary>{{ for line in prop.XmlSummary | string.split '\n' }}
+    /// {{ line }}{{ end }}
+    /// </summary>
+    {{ prop?.DataType }} {{ prop?.PascalCase }}{{ if !for.last }},
+    {{ end }}
+    {{~ end ~}}
+    {{~ end ~}}
+);

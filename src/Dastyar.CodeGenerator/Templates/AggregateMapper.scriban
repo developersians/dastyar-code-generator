@@ -1,0 +1,16 @@
+using Dastyar.Domain;
+
+namespace Dastyar.Application;
+
+public static class {{ PascalCase }}Mapper
+{
+    public static {{ PascalCase }}Response To{{ PascalCase }}Response(this {{ OriginalName }} entity)
+    {
+        return new(
+        {{~ for prop in Properties ~}}
+        {{~ if prop.OriginalName == "ID" ~}}
+            Id: entity.ID,{{ else }}
+            {{ prop.PascalCase }}: entity.{{ prop.OriginalName }}{{ if !for.last }}, {{ end }}{{~ end ~}}
+        {{~ end ~}});
+    }
+}

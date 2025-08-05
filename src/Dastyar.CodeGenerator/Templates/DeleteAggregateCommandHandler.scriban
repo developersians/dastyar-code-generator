@@ -1,0 +1,26 @@
+using Dastyar.Domain;
+using Dastyar.SharedKernel.Application;
+using Dastyar.SharedKernel.Domain;
+using MediatR;
+
+namespace Dastyar.Application;
+
+internal sealed class Delete{{ PascalCase }}CommandHandler(
+    I{{ PascalCase }}Repository  {{ CamelCase }}Repository,
+    IUnitOfWork unitOfWork) : IRequestHandler<Delete{{ PascalCase }}Command, Result<short>>
+{
+    public async Task<Result<short>> Handle(Delete{{ PascalCase }}Command command, CancellationToken cancellationToken)
+    {
+        var isDeleted = await  {{ CamelCase }}Repository.DeleteAsync(
+            predicate: x => x.ID == command.Id,
+            softDelete: true,
+            cancellationToken: cancellationToken);
+
+        await unitOfWork.SaveChangesAsync(cancellationToken);
+
+        if (isDeleted == false)
+            return Result<short>.Failure(CompanyErrors.NotFound(command.Id));
+
+        return Result<short>.Success(command.Id);
+    }
+}

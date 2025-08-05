@@ -1,0 +1,21 @@
+using Dastyar.Domain;
+using Dastyar.SharedKernel.Domain;
+using MediatR;
+
+namespace Dastyar.Application;
+
+internal sealed class Get{{ PascalCase }}ListQueryHandler(I{{ PascalCase }}Repository  {{ CamelCase }}Repository)
+    : IRequestHandler<Get{{ PascalCase }}ListQuery, Result<IReadOnlyList<{{ PascalCase }}Response>>>
+{
+    public async Task<Result<IReadOnlyList<{{ PascalCase }}Response>>> Handle(Get{{ PascalCase }}ListQuery query, CancellationToken cancellationToken)
+    {
+        var result = await {{ CamelCase }}Repository.GetListAsync(cancellationToken);
+
+        IReadOnlyList< {{ PascalCase }}Response> value = result
+            .Select(x => x.To{{ PascalCase }}Response())
+            .ToList()
+            .AsReadOnly() ?? Enumerable.Empty<{{ PascalCase }}Response>().ToList().AsReadOnly();
+
+        return Result<IReadOnlyList<{{ PascalCase }}Response>>.Success(value);
+    }
+}

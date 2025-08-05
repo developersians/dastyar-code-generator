@@ -1,0 +1,18 @@
+using Dastyar.SharedKernel.Domain;
+
+namespace Dastyar.Domain;
+
+public static class {{ PascalCase }}Errors
+{
+    public static Error NotFound(short id) =>
+        Error.NotFound(
+            code: "{{ Plural }}.NotFound",
+            description: $"The {{ CamelCase }} with the ID = '{id}' was not found."
+        );
+
+    public static Error AlreadyExists(string input) =>
+        Error.Conflict(
+            code: "Companies.AlreadyExists",
+            description: $"The {{ CamelCase }} with input = '{input}' is already exists."
+        );
+}

@@ -1,0 +1,35 @@
+using Dastyar.Domain;
+using Dastyar.SharedKernel.Application;
+using Dastyar.SharedKernel.Domain;
+using MediatR;
+
+namespace Dastyar.Application;
+
+internal sealed class Update{{ PascalCase }}CommandHandler(
+    I{{ PascalCase }}Repository  {{ CamelCase }}Repository,
+    IUnitOfWork unitOfWork) : IRequestHandler<Update{{ PascalCase }}Command, Result<short>>
+{
+    public async Task<Result<short>> Handle(Update{{ PascalCase }}Command command, CancellationToken cancellationToken)
+    {
+         {{ OriginalName }}? entity = await  {{ CamelCase }}Repository.GetAsync(
+            predicate: x => x.ID == command.Id,
+            includes: null,
+            cancellationToken: cancellationToken);        
+
+        if (entity is null)
+            return Result<short>.Failure( {{ PascalCase }}Errors.NotFound(command.Id));
+
+        entity.Update(            
+        {{~ for prop in Properties ~}}
+        {{~ if prop.OriginalName != "ID" ~}}
+            {{ prop.CamelCase }}: command.{{ prop.PascalCase }}{{ if !for.last }}, {{ end }}
+            {{~ end ~}}
+        {{~ end ~}}
+        );
+
+        await  {{ CamelCase }}Repository.UpdateAsync(entity, cancellationToken);
+        await unitOfWork.SaveChangesAsync(cancellationToken);
+
+        return Result<short>.Success(entity.ID);
+    }
+}

@@ -1,0 +1,11 @@
+namespace Dastyar.Application;
+
+public sealed record {{ PascalCase }}Response(
+    {{~ for prop in Properties ~}}
+    /// <summary>{{ for line in prop.XmlSummary | string.split '\n' }}
+    /// {{ line }}{{ end }}
+    /// </summary>
+    {{ prop?.DataType }} {{ prop?.PascalCase }}{{ if !for.last }}, {{ end }}
+    
+    {{~ end ~}}
+);

@@ -1,0 +1,9 @@
+using Dastyar.SharedKernel.Domain;
+using MediatR;
+
+namespace Dastyar.Application;
+
+public sealed record Update{{ PascalCase }}Command(
+    {{~ for prop in Properties ~}}
+    {{ prop?.DataType }} {{ prop?.PascalCase }}{{ if !for.last }}, 
+{{ end }}{{~ end ~}}) : IRequest<Result<short>>;
