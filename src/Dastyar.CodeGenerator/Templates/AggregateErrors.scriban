@@ -12,7 +12,7 @@ public static class {{ PascalCase }}Errors
 
     public static Error AlreadyExists(string input) =>
         Error.Conflict(
-            code: "Companies.AlreadyExists",
+            code: "{{ Plural }}.AlreadyExists",
             description: $"The {{ CamelCase }} with input = '{input}' is already exists."
         );
 }
