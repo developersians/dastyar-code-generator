@@ -32,11 +32,15 @@ public sealed class {{ OriginalName }} : Entity, IAggregateRoot
         {{~ end ~}}
         )
     {
-        return new(
+        var entity new(
             {{~ for prop in Properties ~}}
             {{ prop?.CamelCase }}: {{ prop?.CamelCase }}{{ if !for.last }}, {{ end }}
             {{~ end ~}}
         );
+
+        //entity.AddDomainEvent(new KeyChainAddedDomainEvent(Id));
+
+        return entity;
     }
 
     public Result<short> Update(
