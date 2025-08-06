@@ -19,7 +19,7 @@ internal sealed class Delete{{ PascalCase }}CommandHandler(
         await unitOfWork.SaveChangesAsync(cancellationToken);
 
         if (isDeleted == false)
-            return Result<short>.Failure(CompanyErrors.NotFound(command.Id));
+            return Result<short>.Failure({{ PascalCase }}Errors.NotFound(command.Id));
 
         return Result<short>.Success(command.Id);
     }
