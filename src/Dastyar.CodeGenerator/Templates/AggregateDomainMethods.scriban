@@ -32,7 +32,7 @@ public sealed class {{ OriginalName }} : Entity, IAggregateRoot
         {{~ end ~}}
         )
     {
-        var entity new(
+        {{ OriginalName }} entity = new(
             {{~ for prop in Properties ~}}
             {{ prop?.CamelCase }}: {{ prop?.CamelCase }}{{ if !for.last }}, {{ end }}
             {{~ end ~}}

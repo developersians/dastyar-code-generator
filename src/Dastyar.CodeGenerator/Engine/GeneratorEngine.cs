@@ -83,7 +83,7 @@ public sealed class GeneratorEngine
     {
         foreach (var kind in Enum.GetValues<TemplateKind>())
         {
-            string content = File.ReadAllText(@$"D:\Projects\dastyarCodeGenerator\src\Dastyar.CodeGenerator\Templates\{Enum.GetName(kind)}.scriban");
+            string content = File.ReadAllText(@$"D:\Projects\dastyar-code-generator\src\Dastyar.CodeGenerator\Templates\{Enum.GetName(kind)}.scriban");
             string outputFolder = GetOutputFolderName(kind);
 
             Templates.Add(kind, new TemplateInfo(content, outputFolder));

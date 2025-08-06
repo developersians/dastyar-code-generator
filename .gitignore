@@ -4,3 +4,5 @@
 
 /src/Dastyar.CodeGenerator/obj
 /.vs
+/src/Dastyar.CodeGenerator/bin/Debug/net9.0
+/src/Dastyar.CodeGenerator/Generated
