@@ -1,0 +1,10 @@
+using Dastyar.Domain;
+using Dastyar.SharedKernel.Infrastructure;
+
+namespace Dastyar.Infrastructure;
+
+internal sealed class {{ PascalCase }}Repository(AppDbContext context)
+	: Repository<{{ OriginalName }}>(context), I{{ PascalCase }}Repository
+{
+}
+

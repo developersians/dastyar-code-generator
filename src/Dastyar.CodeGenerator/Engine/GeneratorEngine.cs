@@ -120,6 +120,8 @@ public sealed class GeneratorEngine
             TemplateKind.AggregateDomainMethods or
             TemplateKind.AggregateErrors => "Domain",
 
+            TemplateKind.AggregateRepository => "Infrastructure\\Persistence",
+
             _ => ""
         };
     }
