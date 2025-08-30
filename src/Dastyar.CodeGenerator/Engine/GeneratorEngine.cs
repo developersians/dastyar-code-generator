@@ -122,6 +122,8 @@ public sealed class GeneratorEngine
 
             TemplateKind.AggregateRepository => "Infrastructure\\Persistence",
 
+            TemplateKind.LegacyAggregate => "LegacyEntities",
+
             _ => ""
         };
     }
@@ -173,9 +175,18 @@ public sealed class GeneratorEngine
 
     private static string GetFilename(KeyValuePair<TemplateKind, TemplateInfo> template, EntityInfo info)
     {
-        return template.Key == TemplateKind.AggregateController
-            ? $"{Enum.GetName(template.Key)!.Replace("Aggregate", info.Plural)}.cs"
-            : $"{Enum.GetName(template.Key)!.Replace("Aggregate", info.PascalCase)}.cs";
+        return template.Key switch
+        {
+            TemplateKind.AggregateController => $"{Enum.GetName(template.Key)!.Replace("Aggregate", info.Plural)}.cs",
+
+            TemplateKind.LegacyAggregate => $"{Enum.GetName(template.Key)!.Replace("Aggregate", info.OriginalName)}.cs",
+
+            _ => $"{Enum.GetName(template.Key)!.Replace("Aggregate", info.PascalCase)}.cs"
+        };
+
+        //return template.Key == TemplateKind.AggregateController
+        //    ? $"{Enum.GetName(template.Key)!.Replace("Aggregate", info.Plural)}.cs"
+        //    : $"{Enum.GetName(template.Key)!.Replace("Aggregate", info.PascalCase)}.cs";
     }
 
     //private bool IsDerivedFromEntity(Type type)

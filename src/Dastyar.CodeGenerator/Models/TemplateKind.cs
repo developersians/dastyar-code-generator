@@ -34,4 +34,6 @@ public enum TemplateKind
     AggregateErrors,
 
     AggregateDomainMethods,
+
+    LegacyAggregate,
 }

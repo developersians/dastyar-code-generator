@@ -1,0 +1,10 @@
+namespace Dastyar.DataSeeder;
+
+public class Legacy{{ OriginalName }}
+{
+    public Legacy{{ OriginalName }}() { }
+
+    {{~ for prop in Properties ~}}
+    public {{ prop?.DataType }} {{ prop?.OriginalName }} { get; set; }
+    {{~ end ~}}
+}

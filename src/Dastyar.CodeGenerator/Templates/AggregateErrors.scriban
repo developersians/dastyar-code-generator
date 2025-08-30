@@ -7,12 +7,10 @@ public static class {{ PascalCase }}Errors
     public static Error NotFound(short id) =>
         Error.NotFound(
             code: "{{ Plural }}.NotFound",
-            description: $"The {{ CamelCase }} with the ID = '{id}' was not found."
-        );
+            description: $"The {{ CamelCase }} with the ID = '{id}' was not found.");
 
     public static Error AlreadyExists(string input) =>
         Error.Conflict(
             code: "{{ Plural }}.AlreadyExists",
-            description: $"The {{ CamelCase }} with input = '{input}' is already exists."
-        );
+            description: $"The {{ CamelCase }} with input = '{input}' is already exists.");
 }
