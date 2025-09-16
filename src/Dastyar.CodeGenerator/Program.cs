@@ -1,11 +1,11 @@
 ﻿using Dastyar.CodeGenerator;
 
-var kernelDomainDll = @"D:\Projects\dastyar\src\Dastyar.SharedKernel.Domain\bin\Debug\net9.0\Dastyar.SharedKernel.Domain.dll";
+var kernelDomainDll = @"D:\Projects\dastyar\src\Kernel\Ddd.Kernel.Domain\bin\Debug\net9.0\Ddd.Kernel.Domain.dll";
 var domainDll = @"D:\Projects\dastyar\src\Dastyar.Domain\bin\Debug\net9.0\Dastyar.Domain.dll";
 
 var engine = GeneratorEngine.CreateEngine(
     sharedDomainDllPath: kernelDomainDll,
     domainDllPath: domainDll,
-    iAggregateRootNamespace: "Dastyar.SharedKernel.Domain.IAggregateRoot");
+    iAggregateRootNamespace: "Ddd.Kernel.Domain.IAggregateRoot");
 
 engine.GenerateTemplates();
