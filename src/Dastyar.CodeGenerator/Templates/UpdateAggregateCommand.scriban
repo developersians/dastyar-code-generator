@@ -1,4 +1,4 @@
-using Dastyar.SharedKernel.Domain;
+using Ddd.Kernel.Domain;
 using MediatR;
 
 namespace Dastyar.Application;

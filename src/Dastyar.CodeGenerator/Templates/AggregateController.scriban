@@ -1,6 +1,6 @@
 using Dastyar.Application;
 using Dastyar.Domain;
-using Dastyar.SharedKernel.Domain;
+using Ddd.Kernel.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
