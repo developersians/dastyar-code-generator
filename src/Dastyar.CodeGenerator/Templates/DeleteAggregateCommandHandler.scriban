@@ -1,9 +1,9 @@
-using Dastyar.Domain;
+using Arzfy.Domain;
 using Ddd.Kernel.Application;
 using Ddd.Kernel.Domain;
 using MediatR;
 
-namespace Dastyar.Application;
+namespace Arzfy.Application;
 
 internal sealed class Delete{{ PascalCase }}CommandHandler(
     I{{ PascalCase }}Repository {{ CamelCase }}Repository,

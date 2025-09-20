@@ -1,7 +1,7 @@
 using Ddd.Kernel.Domain;
 using MediatR;
 
-namespace Dastyar.Application;
+namespace Arzfy.Application;
 
 public sealed record Update{{ PascalCase }}Command(
     {{~ for prop in Properties ~}}

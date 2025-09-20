@@ -1,6 +1,6 @@
 using Ddd.Kernel.Domain;
 
-namespace Dastyar.Domain;
+namespace Arzfy.Domain;
 
 public sealed class {{ OriginalName }} : Entity, IAggregateRoot
 {

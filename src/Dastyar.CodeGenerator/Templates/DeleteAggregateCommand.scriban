@@ -1,6 +1,6 @@
 using Ddd.Kernel.Domain;
 using MediatR;
 
-namespace Dastyar.Application;
+namespace Arzfy.Application;
 
 public sealed record Delete{{ PascalCase }}Command(short Id) : IRequest<Result<short>>;

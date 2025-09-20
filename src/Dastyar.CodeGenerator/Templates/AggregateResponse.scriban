@@ -1,4 +1,4 @@
-namespace Dastyar.Application;
+namespace Arzfy.Application;
 
 public sealed record {{ PascalCase }}Response(
     {{~ for prop in Properties ~}}

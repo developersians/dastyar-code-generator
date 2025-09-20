@@ -1,4 +1,4 @@
-﻿using Dastyar.CodeGenerator;
+﻿using Arzfy.CodeGenerator;
 
 public record EntityInfo(
     ///<summary>

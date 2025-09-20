@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Xml.Linq;
 
-namespace Dastyar.CodeGenerator;
+namespace Arzfy.CodeGenerator;
 
 public class XmlCommentReader
 {

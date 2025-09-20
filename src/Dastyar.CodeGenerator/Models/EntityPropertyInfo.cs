@@ -1,4 +1,4 @@
-﻿namespace Dastyar.CodeGenerator;
+﻿namespace Arzfy.CodeGenerator;
 
 public sealed record EntityPropertyInfo(
     string DataType,

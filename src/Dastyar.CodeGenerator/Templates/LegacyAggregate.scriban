@@ -1,4 +1,4 @@
-namespace Dastyar.DataSeeder;
+namespace Arzfy.DataSeeder;
 
 public class Legacy{{ OriginalName }}
 {

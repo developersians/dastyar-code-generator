@@ -1,4 +1,4 @@
-﻿namespace Dastyar.CodeGenerator;
+﻿namespace Arzfy.CodeGenerator;
 
 public enum TemplateKind
 {

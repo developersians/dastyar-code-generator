@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Dastyar.CodeGenerator;
+namespace Arzfy.CodeGenerator;
 
 public static class ProjectRootFinder
 {

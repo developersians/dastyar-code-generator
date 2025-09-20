@@ -2,7 +2,7 @@
 using System.Reflection;
 using System.Text;
 
-namespace Dastyar.CodeGenerator;
+namespace Arzfy.CodeGenerator;
 
 public sealed class GeneratorEngine
 {

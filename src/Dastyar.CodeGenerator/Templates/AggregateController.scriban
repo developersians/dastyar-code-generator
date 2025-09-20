@@ -1,10 +1,10 @@
-using Dastyar.Application;
-using Dastyar.Domain;
+using Arzfy.Application;
+using Arzfy.Domain;
 using Ddd.Kernel.Domain;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Dastyar.Api;
+namespace Arzfy.Api;
 
 [Tags(ModuleNames.DefinitionManagement)]
 [ApiController]

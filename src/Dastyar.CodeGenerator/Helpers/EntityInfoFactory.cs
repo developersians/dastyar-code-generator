@@ -1,4 +1,4 @@
-﻿using Dastyar.CodeGenerator;
+﻿using Arzfy.CodeGenerator;
 using System.Reflection;
 
 public static class EntityInfoFactory

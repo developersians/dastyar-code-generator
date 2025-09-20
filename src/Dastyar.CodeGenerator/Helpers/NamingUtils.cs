@@ -1,6 +1,6 @@
 ﻿using Humanizer;
 
-namespace Dastyar.CodeGenerator;
+namespace Arzfy.CodeGenerator;
 
 public static class NamingUtils
 {

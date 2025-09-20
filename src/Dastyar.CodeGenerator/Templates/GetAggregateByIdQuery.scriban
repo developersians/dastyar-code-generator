@@ -1,6 +1,6 @@
 using Ddd.Kernel.Domain;
 using MediatR;
 
-namespace Dastyar.Application;
+namespace Arzfy.Application;
 
 public sealed record Get{{ PascalCase }}ByIdQuery(short Id) : IRequest<Result<{{ PascalCase }}Response>>;

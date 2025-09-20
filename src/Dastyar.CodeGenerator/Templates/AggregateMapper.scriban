@@ -1,6 +1,6 @@
-using Dastyar.Domain;
+using Arzfy.Domain;
 
-namespace Dastyar.Application;
+namespace Arzfy.Application;
 
 public static class {{ PascalCase }}Mapper
 {

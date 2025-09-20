@@ -1,4 +1,4 @@
-namespace Dastyar.Api;
+namespace Arzfy.Api;
 
 public sealed record Update{{ PascalCase }}Request(
     {{~ for prop in Properties ~}}
